@@ -5,10 +5,10 @@ import { useTheme } from '@/context/ThemeContext';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { usePathname } from 'next/navigation';
-import { Home } from 'lucide-react';
+import { Home, Globe } from 'lucide-react';
 
 export default function MainHeader() {
-    const { t } = useLanguage();
+    const { t, language, setLanguage } = useLanguage();
     const { isDark } = useTheme();
     const pathname = usePathname();
 
@@ -35,8 +35,8 @@ export default function MainHeader() {
                         <Link
                             href="/curriculo"
                             className={`text-sm transition-colors ${isActive('/curriculo')
-                                    ? 'font-medium'
-                                    : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                                ? 'font-medium'
+                                : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                                 }`}
                         >
                             {t('Currículo', 'Resume')}
@@ -44,8 +44,8 @@ export default function MainHeader() {
                         <Link
                             href="/projects"
                             className={`text-sm transition-colors ${isActive('/projects')
-                                    ? 'font-medium'
-                                    : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                                ? 'font-medium'
+                                : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                                 }`}
                         >
                             {t('Projetos', 'Projects')}
@@ -53,13 +53,24 @@ export default function MainHeader() {
                         <Link
                             href="/articles"
                             className={`text-sm transition-colors ${isActive('/articles')
-                                    ? 'font-medium'
-                                    : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                                ? 'font-medium'
+                                : isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                                 }`}
                         >
                             {t('Artigos', 'Articles')}
                         </Link>
                     </nav>
+                    <button
+                        onClick={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-colors ${isDark
+                                ? 'bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white'
+                                : 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900'
+                            }`}
+                        aria-label={language === 'pt' ? 'Switch to English' : 'Mudar para Português'}
+                    >
+                        <Globe size={14} />
+                        <span className="font-medium">{language === 'pt' ? 'EN' : 'PT'}</span>
+                    </button>
                     <ThemeToggle />
                 </div>
             </div>
