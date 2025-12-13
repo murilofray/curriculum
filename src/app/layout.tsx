@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Murilo Fray | AI Engineer & Full Stack Developer",
-  description: "Portfolio of Murilo Fray, an AI Engineer and Full Stack Developer specializing in Azure, LangGraph, and Next.js.",
+  title: "Murilo Fray | Backend Developer & AI Engineer",
+  description: "Portfolio of Murilo Fray, a Backend Developer specialized in AI, Azure, LangGraph, and Python.",
 };
 
 export default function RootLayout({
@@ -23,11 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

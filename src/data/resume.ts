@@ -45,8 +45,8 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   personalInfo: {
     name: "Murilo Lopes Fray de Oliveira",
-    role: "AI Engineer | Back-end | Azure | LangGraph | Langchain | PydanticAI",
-    location: "Presidente Prudente, São Paulo, Brasil",
+    role: "Backend Developer | AI Engineer | Azure | LangChain | LangGraph | RAG | Python",
+    location: "Presidente Epitácio, São Paulo, Brasil",
     email: "murilofray01@gmail.com",
     phone: "+55 18 98806-6751",
     whatsapp: "5518988066751",
@@ -54,8 +54,8 @@ export const resumeData: ResumeData = {
     github: "https://github.com/murilofray",
   },
   summary: {
-    pt: "Engenheiro de Software focado em Inteligência Artificial e Arquitetura em Nuvem. Atualmente, atuo como Consultor em Desenvolvimento na OiKO.ai, projetando ecossistemas robustos que integram back-end de alta performance, interfaces modernas e modelos de linguagem avançados (LLMs). Tenho experiência sólida em arquitetura Azure (Web Apps, Static Web Apps, Container Apps), desenvolvimento de APIs com FastAPI e NestJS, e criação de agentes autônomos com LangGraph e CrewAI. Minha abordagem combina bancos de dados relacionais, vetoriais e de grafos para entregar soluções de IA contextualizadas e de alto valor agregado.",
-    en: "Software Engineer focused on Artificial Intelligence and Cloud Architecture. Currently working as a Development Consultant at OiKO.ai, designing robust ecosystems that integrate high-performance back-ends, modern interfaces, and advanced Large Language Models (LLMs). I have solid experience in Azure architecture (Web Apps, Static Web Apps, Container Apps), API development with FastAPI and NestJS, and autonomous agent creation with LangGraph and CrewAI. My approach combines relational, vector, and graph databases to deliver contextualized and high-value AI solutions."
+    pt: "Desenvolvedor Backend especializado em IA, atuo como Consultor em Desenvolvimento na OiKO.ai, utilizando metodologia Scrum, enquanto finalizo Ciência da Computação no IFSP. Construo APIs e integrações com LLMs usando Python, C#, LangChain e LangGraph, orquestrando dados em bancos relacionais, NoSQL, vetoriais e de grafos. Tenho experiência prática em projetos de RAG, agentes autônomos e deploy em Azure. Meu foco é evoluir para arquiteto de sistemas, unindo excelência em backend a soluções inteligentes.",
+    en: "Backend Developer specialized in AI, working as a Development Consultant at OiKO.ai using Scrum methodology, while completing Computer Science at IFSP. I build APIs and LLM integrations using Python, C#, LangChain, and LangGraph, orchestrating data across relational, NoSQL, vector, and graph databases. I have hands-on experience in RAG projects, autonomous agents, and Azure deployment. My focus is to evolve into a systems architect, combining backend excellence with intelligent solutions."
   },
   experience: [
     {

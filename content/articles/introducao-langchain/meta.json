@@ -1,0 +1,19 @@
+{
+    "slug": "introducao-langchain",
+    "title": {
+        "pt": "Introdução ao LangChain",
+        "en": "Introduction to LangChain"
+    },
+    "excerpt": {
+        "pt": "Um guia completo para começar a desenvolver aplicações com LangChain, desde conceitos básicos até implementações práticas.",
+        "en": "A complete guide to start developing applications with LangChain, from basic concepts to practical implementations."
+    },
+    "tags": [
+        "LangChain",
+        "Python",
+        "Tutorial"
+    ],
+    "category": "Tutorial",
+    "publishedAt": "2024-11-10",
+    "readingTime": 8
+}

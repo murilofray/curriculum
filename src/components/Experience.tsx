@@ -2,12 +2,14 @@
 
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
 import { resumeData } from '@/data/resume';
 import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 
 export default function Experience() {
     const { language, t } = useLanguage();
+    const { isDark } = useTheme();
     const { experience } = resumeData;
 
     return (
@@ -27,7 +29,7 @@ export default function Experience() {
 
                 <div className="relative space-y-12">
                     {/* Vertical Line */}
-                    <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 hidden md:block" />
+                    <div className={`absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 hidden md:block ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
 
                     {experience.map((job, index) => (
                         <motion.div
@@ -45,26 +47,27 @@ export default function Experience() {
                             <div className="md:w-1/2" />
 
                             <div className="md:w-1/2">
-                                <div className="glass-card p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                                <div className={`glass-card p-6 rounded-2xl transition-colors ${isDark ? 'hover:bg-white/10' : 'hover:bg-gray-50'}`}>
                                     <div className="flex items-start justify-between mb-4">
                                         <div>
-                                            <h3 className="text-xl font-bold text-white mb-1">{job.company}</h3>
-                                            <p className="text-blue-400 font-medium text-sm">
+                                            <h3 className={`text-xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>{job.company}</h3>
+                                            <p className="text-blue-500 font-medium text-sm">
                                                 {language === 'pt' ? job.role.pt : job.role.en}
                                             </p>
                                         </div>
-                                        <div className="flex items-center gap-2 text-xs text-gray-500 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                                        <div className={`flex items-center gap-2 text-xs px-3 py-1 rounded-full border ${isDark ? 'text-gray-500 bg-white/5 border-white/5' : 'text-gray-500 bg-gray-100 border-gray-200'
+                                            }`}>
                                             <Briefcase size={12} />
                                             {language === 'pt' ? job.period.pt : job.period.en}
                                         </div>
                                     </div>
 
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                    <p className={`text-sm leading-relaxed mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                                         {language === 'pt' ? job.description.pt : job.description.en}
                                     </p>
 
                                     {job.image && (
-                                        <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
+                                        <div className={`mb-4 rounded-xl overflow-hidden border ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
                                             <img
                                                 src={job.image}
                                                 alt={job.company}
@@ -78,7 +81,7 @@ export default function Experience() {
                                             href={job.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                                            className="inline-flex items-center gap-2 text-sm text-blue-500 hover:text-blue-400 transition-colors"
                                         >
                                             {language === 'pt' ? 'Ver notícia completa' : 'Read full news'}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
